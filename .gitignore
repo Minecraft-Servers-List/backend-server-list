@@ -29,3 +29,8 @@ build/
 
 ### VS Code ###
 .vscode/
+.vs/
+
+### SENSIBLE DATA ###
+*.p12
+*.pem
