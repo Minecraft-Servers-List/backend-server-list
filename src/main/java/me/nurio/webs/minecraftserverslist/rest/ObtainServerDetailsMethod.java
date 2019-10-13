@@ -14,4 +14,14 @@ public class ObtainServerDetailsMethod {
         return "Works "+serverDomain;
     }
 
+    @GetMapping("list/{page:[\\d]+}")
+    public String getServersListDetails(@PathVariable Integer page){
+        return "Works "+page;
+    }
+
+    @GetMapping("statistics/{serverId:[\\d]+}")
+    public String getSpecificServerStatistics(@PathVariable Integer serverId){
+        return "Works "+serverId;
+    }
+
 }
