@@ -34,3 +34,4 @@ build/
 ### SENSIBLE DATA ###
 *.p12
 *.pem
+src/main/resources/application.yml
