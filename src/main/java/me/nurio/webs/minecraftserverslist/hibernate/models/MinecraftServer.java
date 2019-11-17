@@ -35,7 +35,7 @@ public class MinecraftServer {
     @Column(name="sla")
     public double sla;
     @Column(name="server_icon_id")
-    public int serverIconId;
+    public Integer serverIconId;
     @Column(name="server_tags")
     public String serverTags;
     @Column(name="server_badges")
