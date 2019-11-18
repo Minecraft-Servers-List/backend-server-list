@@ -21,6 +21,10 @@ public class MinecraftServerService {
         return mcRepository.findByServerDomain(serverDomain);
     }
 
+    public MinecraftServer findByServerId(int serverId){
+        return mcRepository.findByServerId(serverId);
+    }
+
     public List<MinecraftServer> findAll(){
         return mcRepository.findAll();
     }
