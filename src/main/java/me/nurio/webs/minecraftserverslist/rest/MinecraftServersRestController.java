@@ -31,7 +31,7 @@ public class MinecraftServersRestController {
         return new MinecraftServerResponse(mcServer);
     }
 
-    @GetMapping("/{serverId:[\\d-.]+}")
+    @GetMapping("/{serverId:[\\d]+}")
     public MinecraftServerResponse getServer(@PathVariable Integer serverId) {
         MinecraftServer mcServer = serverService.findByServerId(serverId);
         return new MinecraftServerResponse(mcServer);
@@ -47,7 +47,7 @@ public class MinecraftServersRestController {
         return pingList;
     }
 
-    @GetMapping("/{serverDomain:[\\w\\d-.]+}/statistics")
+    @GetMapping("/{serverId:[\\d]+}/statistics")
     public List<MinecraftPingResponse> getServerPings(@PathVariable Integer serverId) {
         List<MinecraftPing> mcPingList = pingService.findAllByServerId(serverId);
 
@@ -62,7 +62,7 @@ public class MinecraftServersRestController {
         return new MinecraftServerDetailsResponse(mcServer);
     }
 
-    @GetMapping("/{serverDomain:[\\w\\d-.]+}/details")
+    @GetMapping("/{serverId:[\\d]+}/details")
     public MinecraftServerDetailsResponse getServerDetails(@PathVariable Integer serverId) {
         MinecraftServer mcServer = serverService.findByServerId(serverId);
         return new MinecraftServerDetailsResponse(mcServer);
