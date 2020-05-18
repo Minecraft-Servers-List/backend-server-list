@@ -20,7 +20,7 @@ public class MinecraftServerResponse {
         this.setOnlinePlayers(mcServer.getLastOnlinePlayers());
         this.setMaxPlayers(mcServer.getLastMaxPlayers());
 
-        List<String> tags = new ArrayList<String>();
+        List<String> tags = new ArrayList<>();
         tags.addAll(Arrays.asList(mcServer.getServerTags().split(";")));
         tags.addAll(Arrays.asList(mcServer.getServerBadges().split(";")));
         this.setTags(tags);
