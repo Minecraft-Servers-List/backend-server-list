@@ -10,12 +10,25 @@ import java.util.List;
 @Data
 public class MinecraftServerResponse {
 
+    private int id;
+
+    private String domain;
+    private int score;
+
+    private int image;
+
+    private int onlinePlayers;
+    private int maxPlayers;
+
+    private List<String> tags;
+
     public MinecraftServerResponse(MinecraftServer mcServer) {
         this.setId(mcServer.getServerId());
         this.setDomain(mcServer.getServerDomain());
+        this.setScore(mcServer.getServerScore());
 
         // TODO : Create image controller or use a CDN service.
-        this.setImageURL(mcServer.getServerIconId() + "");
+        this.setImage(mcServer.getServerIconId());
 
         this.setOnlinePlayers(mcServer.getLastOnlinePlayers());
         this.setMaxPlayers(mcServer.getLastMaxPlayers());
@@ -25,15 +38,5 @@ public class MinecraftServerResponse {
         tags.addAll(Arrays.asList(mcServer.getServerBadges().split(";")));
         this.setTags(tags);
     }
-
-    private int id;
-
-    private String domain;
-    private String imageURL;
-
-    private int onlinePlayers;
-    private int maxPlayers;
-
-    private List<String> tags;
 
 }

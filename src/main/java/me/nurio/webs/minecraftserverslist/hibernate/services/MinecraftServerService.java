@@ -13,30 +13,32 @@ public class MinecraftServerService {
 
     private final MinecraftServerRepository mcRepository;
 
-    public MinecraftServerService(MinecraftServerRepository mcRepository){
+    public MinecraftServerService(MinecraftServerRepository mcRepository) {
         this.mcRepository = mcRepository;
     }
 
-    public MinecraftServer findByServerDomain(String serverDomain){
+    public MinecraftServer findByServerDomain(String serverDomain) {
         return mcRepository.findByServerDomain(serverDomain);
     }
 
-    public MinecraftServer findByServerId(int serverId){
+    public MinecraftServer findByServerId(int serverId) {
         return mcRepository.findByServerId(serverId);
     }
 
-    public List<MinecraftServer> findAll(){
+    public List<MinecraftServer> findAll() {
         return mcRepository.findAll();
     }
 
-    public List<MinecraftServer> findAll(Pageable pageable){
-        Page<MinecraftServer> li = mcRepository.findAll(pageable);
-        return li.getContent();
+    public Page<MinecraftServer> findAll(Pageable pageable) {
+        return mcRepository.findAll(pageable);
     }
 
-    public List<MinecraftServer> findAllOrderByServerScoreDesc(Pageable pageable){
-        Page<MinecraftServer> li = mcRepository.findAllByOrderByServerScoreDesc(pageable);
-        return li.getContent();
+    public Page<MinecraftServer> findOrderByServerScoreDesc(Pageable pageable) {
+        return mcRepository.findAllByOrderByServerScoreDesc(pageable);
+    }
+
+    public Page<MinecraftServer> findAllOrderByServerScoreDesc(Pageable pageable) {
+        return mcRepository.findAllByOrderByServerScoreDesc(pageable);
     }
 
 }
