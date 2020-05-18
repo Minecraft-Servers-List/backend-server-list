@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface MinecraftPingRepository extends JpaRepository<MinecraftPing, Integer> {
 
-    public List<MinecraftPing> findAllByServerId(int serverId);
+    List<MinecraftPing> findAllByServerId(int serverId);
 
 }

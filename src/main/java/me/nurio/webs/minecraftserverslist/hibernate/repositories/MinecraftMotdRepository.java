@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface MinecraftMotdRepository extends JpaRepository<MinecraftMotd, Integer> {
 
-    public MinecraftMotd findByMotdId(int motdId);
+    MinecraftMotd findByMotdId(int motdId);
 
 }
