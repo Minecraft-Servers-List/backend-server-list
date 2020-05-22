@@ -13,15 +13,15 @@ public class MinecraftPingService {
 
     private final MinecraftPingRepository pingRepository;
 
-    public MinecraftPingService(MinecraftPingRepository pingRepository){
+    public MinecraftPingService(MinecraftPingRepository pingRepository) {
         this.pingRepository = pingRepository;
     }
 
-    public List<MinecraftPing> findAllByServerId(int serverId){
+    public List<MinecraftPing> findAllByServerId(int serverId) {
         return pingRepository.findAllByServerId(serverId);
     }
 
-    public List<MinecraftPing> findAll(){
+    public List<MinecraftPing> findAll() {
         return this.pingRepository.findAll();
     }
 

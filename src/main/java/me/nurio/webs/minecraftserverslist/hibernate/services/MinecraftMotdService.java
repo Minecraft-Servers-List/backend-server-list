@@ -13,15 +13,15 @@ public class MinecraftMotdService {
 
     private final MinecraftMotdRepository motdRepository;
 
-    public MinecraftMotdService(MinecraftMotdRepository motdRepository){
+    public MinecraftMotdService(MinecraftMotdRepository motdRepository) {
         this.motdRepository = motdRepository;
     }
 
-    public MinecraftMotd findByServerDomain(int motdId){
+    public MinecraftMotd findByServerDomain(int motdId) {
         return motdRepository.findByMotdId(motdId);
     }
 
-    public List<MinecraftMotd> findAll(){
+    public List<MinecraftMotd> findAll() {
         return this.motdRepository.findAll();
     }
 

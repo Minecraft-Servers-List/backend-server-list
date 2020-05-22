@@ -10,8 +10,11 @@ import org.springframework.stereotype.Repository;
 public interface MinecraftServerRepository extends JpaRepository<MinecraftServer, Integer> {
 
     MinecraftServer findByServerDomain(String serverDomain);
+
     MinecraftServer findByServerId(int serverId);
+
     Page<MinecraftServer> findAll(Pageable pageable);
+
     Page<MinecraftServer> findAllByOrderByServerScoreDesc(Pageable pageable);
 
 
